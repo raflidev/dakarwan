@@ -16,7 +16,6 @@ function Home() {
                   Tambah Karyawan
                </NavLink>
             </div>
-            {/* This example requires Tailwind CSS v2.0+ */}
             <div className="flex flex-col">
                <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                   <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -62,26 +61,26 @@ function Home() {
                                              </div>
                                           </td>
                                           <td className="px-6 py-4 whitespace-nowrap">
-                                             <div className="text-sm text-gray-900">{karyawan.title[0]}</div>
-                                             <div className="text-sm text-gray-500">{karyawan.title[1]}</div>
+                                             <div className="text-sm text-gray-900">{karyawan.title}</div>
+                                             <div className="text-sm text-gray-500">{karyawan.departement}</div>
                                           </td>
                                           <td className="px-6 py-4 whitespace-nowrap">
                                              {
                                                 karyawan.active ?
                                                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                                       Active
-                                </span>
+                                                   </span>
                                                    :
                                                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
                                                       Inactive
-                                </span>
+                                                   </span>
                                              }
                                           </td>
                                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                              {karyawan.role}
                                           </td>
                                           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                             <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                             <NavLink to={`/edit/${karyawan.id}`} className="text-indigo-600 hover:text-indigo-900">Edit</NavLink>
                                           </td>
                                        </tr>
                                     )
@@ -95,7 +94,7 @@ function Home() {
             </div>
 
          </div>
-      </div>
+      </div >
    );
 }
 
