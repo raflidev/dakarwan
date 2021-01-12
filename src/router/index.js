@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Add from '../views/Add';
 import Home from "../views/Home"
+import Edit from "../views/Edit"
 
 
 function Router(props) {
@@ -18,6 +19,12 @@ function Router(props) {
             <Route exact path='/add'>
                <Navbar />
                <Add />
+            </Route>
+         </Switch>
+         <Switch>
+            <Route exact path='/edit/:id_karyawan'>
+               <Navbar />
+               <Edit />
             </Route>
          </Switch>
       </BrowserRouter>
